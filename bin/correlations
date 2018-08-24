@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/correlations'
+require 'pathname'
+
+if ARGV.length == 0
+  puts "Filename is required"
+  exit 1
+end
+
+path = Pathname.new(ARGV[0]).realpath.to_s
+
+puts "Calculating correlations for data set #{path}"
+correlations = Correlations::Correlations.new.from_csv(path)
+
+puts ""
+correlations.keys.each do |key|
+  puts "#{key.gsub('_', ' ').gsub('-', ' ').capitalize}: #{correlations[key]}"
+end
