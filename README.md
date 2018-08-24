@@ -1,5 +1,7 @@
 # Correlation
 
+[![Build Status](https://travis-ci.org/Artmann/correlations.svg?branch=master)](https://travis-ci.org/Artmann/correlations)
+
 Correlations is a gem that can be used to calculate Pearson Correlation Coefficients for a data set.
 
 ## Usage
